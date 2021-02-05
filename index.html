@@ -39,7 +39,7 @@
     <script>
         function weather() {
             const location = document.getElementById('enter-location').value;
-            fetch('http://api.openweathermap.org/data/2.5/weather?q=' + location + '&appid=ad0da4877885d6202e724a03a1e7280a')
+            fetch(`http://api.openweathermap.org/data/2.5/weather?q=${location}&appid=ad0da4877885d6202e724a03a1e7280a`)
                 .then(response => response.json())
                 .then(data => {
                     // const objectMain = ;
