@@ -39,7 +39,7 @@
     <script>
         function weather() {
             const location = document.getElementById('enter-location').value;
-            fetch(`http://api.openweathermap.org/data/2.5/weather?q=${location}&appid=ad0da4877885d6202e724a03a1e7280a`)
+            fetch(`https://api.openweathermap.org/data/2.5/weather?q=$git {location}&appid=ad0da4877885d6202e724a03a1e7280a`)
                 .then(response => response.json())
                 .then(data => {
                     // const objectMain = ;
@@ -53,7 +53,7 @@
                     document.getElementById('temp-info').innerText = weatherType;
 
                     const icon = data.weather[0].icon;
-                    const imgUrl = `http://openweathermap.org/img/wn/${icon}@2x.png`;
+                    const imgUrl = `https://openweathermap.org/img/wn/${icon}@2x.png`;
                     document.getElementById('icon').setAttribute('src', imgUrl);
                 })
                 .catch(err => alert('Wrong City Name!'));
