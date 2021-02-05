@@ -33,6 +33,8 @@
             <img id="icon" src="https://openweathermap.org/img/wn/02d@2x.png" alt="">
             <h1 id="show-location">City</h1>
             <h3><span id="temp">00</span>&deg;C</h3>
+            <h5 class="lead">Maximum - <span id="temp_max">00</span>&deg;C</h5>
+            <h5 class="lead">Minimum - <span id="temp_min">00</span>&deg;C</h5>
             <h1 id="temp-info" class="lead">Clouds</h1>
         </div>
     </div>
@@ -47,8 +49,15 @@
                     document.getElementById('show-location').innerText = data.name;
                     const kelvinTemp = data.main.temp
                     const celsiusTemp = kelvinTemp - 273.15;
-                    console.log(data.main.temp);
+                    const kelvinTempMax = data.main.temp_max
+                    const celsiusTempMax = kelvinTempMax - 273.15;
+                    const kelvinTempMin = data.main.temp_min
+                    const celsiusTempMin = kelvinTempMin - 273.15;
+
                     document.getElementById('temp').innerText = Math.round(celsiusTemp);
+                    document.getElementById('temp_max').innerText = Math.round(celsiusTempMax);
+                    document.getElementById('temp_min').innerText = Math.round(celsiusTempMin);
+                    
 
                     const weatherType = data.weather[0].description;
                     document.getElementById('temp-info').innerText = weatherType;
